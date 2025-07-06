@@ -88,6 +88,9 @@
     content: '';
     @apply absolute left-[-1.5px] top-4 h-full w-[3px] bg-primary;
   }
+  .timeline-item:last-child::before {
+    @apply hidden;
+  }
   .timeline-dot::before {
     content: '';
     @apply absolute left-[-7px] top-4 h-4 w-4 rounded-full bg-primary ring-4 ring-background;

@@ -11,10 +11,10 @@ const timelineData = [
     type: 'education',
     icon: <GraduationCap />,
     date: 'Present',
-    title: 'Student at Parul Institute of Engineering and Technology',
+    title: 'Second Year Student at Parul Institute of Engineering and Technology',
     subtitle: 'B.Tech in AI & ML',
     description: 'Currently pursuing my bachelor\'s degree, focusing on the fascinating world of Artificial Intelligence and Machine Learning.',
-    tags: ['AI', 'ML', 'Student', 'B.Tech'],
+    tags: ['AI', 'ML', 'Student', 'B.Tech', 'Sophomore'],
   },
   {
     type: 'work',
@@ -50,7 +50,7 @@ export default function TimelinePage() {
       </div>
 
       <div className="relative max-w-2xl mx-auto">
-        {timelineData.map((item, index) => (
+        {timelineData.slice().reverse().map((item, index) => (
           <div
             key={index}
             className={cn(
@@ -60,7 +60,7 @@ export default function TimelinePage() {
             style={{ animationDelay: `${index * 200 + 300}ms` }}
           >
             <div className="absolute left-0 timeline-dot">
-              <span className="flex items-center justify-center w-8 h-8 rounded-full bg-background ring-4 ring-primary">
+              <span className="relative z-10 flex items-center justify-center w-8 h-8 rounded-full bg-background ring-4 ring-primary">
                 {item.icon}
               </span>
             </div>
