@@ -1,5 +1,8 @@
+'use client';
+
 import { Briefcase, GraduationCap, Building } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
+import { useEffect, useState } from 'react';
 
 const timelineData = [
   {
@@ -41,9 +44,18 @@ const timelineData = [
 ];
 
 export default function TimelinePage() {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   return (
     <div className="container mx-auto px-4 py-16 sm:py-24">
-      <div className="text-center mb-16">
+      <div 
+        className="text-center mb-16 opacity-0" 
+        style={isMounted ? { animation: 'fade-in-up 0.5s ease-out forwards 100ms' } : {}}
+      >
         <h1 className="font-headline text-4xl md:text-5xl font-bold tracking-tighter mb-2">My Journey</h1>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
           A chronological overview of my professional career and educational milestones.
@@ -52,7 +64,11 @@ export default function TimelinePage() {
 
       <div className="relative max-w-2xl mx-auto">
         {timelineData.map((item, index) => (
-          <div key={index} className="relative pl-8 sm:pl-12 py-6 timeline-item">
+          <div
+            key={index}
+            className="relative pl-8 sm:pl-12 py-6 timeline-item opacity-0"
+            style={isMounted ? { animation: `fade-in-up 0.5s ease-out forwards ${index * 200 + 300}ms` } : {}}
+          >
             <div className="absolute left-0 timeline-dot">
               <span className="flex items-center justify-center w-8 h-8 rounded-full bg-background ring-4 ring-primary">
                 {item.icon}
