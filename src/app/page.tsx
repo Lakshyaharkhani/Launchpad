@@ -28,7 +28,7 @@ export default function Home() {
                 <CardContent className="p-0">
                   <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary/20">
                     <Image
-                      src="/lakshya-portrait.jpg"
+                      src="https://placehold.co/400x400.png"
                       alt="Lakshya's Portrait"
                       width={400}
                       height={400}
