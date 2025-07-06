@@ -1,8 +1,10 @@
+
 'use client';
 
 import { Briefcase, GraduationCap, Building } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { useEffect, useState } from 'react';
+import { cn } from '@/lib/utils';
 
 const timelineData = [
   {
@@ -53,8 +55,11 @@ export default function TimelinePage() {
   return (
     <div className="container mx-auto px-4 py-16 sm:py-24">
       <div 
-        className="text-center mb-16 opacity-0" 
-        style={isMounted ? { animation: 'fade-in-up 0.5s ease-out forwards 100ms' } : {}}
+        className={cn(
+          "text-center mb-16", 
+          isMounted ? "animate-fade-in-up" : "opacity-0"
+        )} 
+        style={{ animationDelay: '100ms' }}
       >
         <h1 className="font-headline text-4xl md:text-5xl font-bold tracking-tighter mb-2">My Journey</h1>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -66,8 +71,11 @@ export default function TimelinePage() {
         {timelineData.map((item, index) => (
           <div
             key={index}
-            className="relative pl-8 sm:pl-12 py-6 timeline-item opacity-0"
-            style={isMounted ? { animation: `fade-in-up 0.5s ease-out forwards ${index * 200 + 300}ms` } : {}}
+            className={cn(
+              "relative pl-8 sm:pl-12 py-6 timeline-item",
+              isMounted ? "animate-fade-in-up" : "opacity-0"
+            )}
+            style={{ animationDelay: isMounted ? `${index * 200 + 300}ms` : '0ms' }}
           >
             <div className="absolute left-0 timeline-dot">
               <span className="flex items-center justify-center w-8 h-8 rounded-full bg-background ring-4 ring-primary">
