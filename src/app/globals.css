@@ -84,16 +84,26 @@
 }
 
 @layer utilities {
+  .timeline-item::before,
+  .timeline-item::after {
+    content: '';
+    @apply absolute left-4 -translate-x-1/2 w-[3px] bg-primary z-0;
+  }
+  /* Top line segment */
   .timeline-item::before {
-    content: '';
-    @apply absolute left-[-1.5px] top-4 h-full w-[3px] bg-primary;
+    @apply top-0 h-1;
   }
-  .timeline-item:last-child::before {
-    @apply hidden;
+  /* Bottom line segment */
+  .timeline-item::after {
+    @apply top-11 bottom-0;
   }
-  .timeline-dot::before {
-    content: '';
-    @apply absolute left-[-7px] top-4 h-4 w-4 rounded-full bg-primary ring-4 ring-background;
+  /* First item in the list is the most recent one (top) */
+  .timeline-item:first-child::before {
+    @apply h-0;
+  }
+  /* Last item in the list is the oldest one (bottom) */
+  .timeline-item:last-child::after {
+    @apply h-0;
   }
 
   .hero-blobs {
