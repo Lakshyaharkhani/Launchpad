@@ -1,47 +1,29 @@
 
 'use client';
 
-import { Briefcase, GraduationCap, Building } from 'lucide-react';
+import { Briefcase, GraduationCap } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
 
 const timelineData = [
   {
-    type: 'work',
-    icon: <Briefcase />,
-    date: '2022 - Present',
-    title: 'Senior Frontend Developer',
-    subtitle: 'Innovate Inc.',
-    description: 'Leading the development of a new user-facing analytics dashboard using Next.js, TypeScript, and Tailwind CSS. Mentoring junior developers and improving code quality across the team.',
-    tags: ['Next.js', 'React', 'TypeScript', 'Leadership'],
-  },
-  {
-    type: 'work',
-    icon: <Briefcase />,
-    date: '2020 - 2022',
-    title: 'Software Engineer',
-    subtitle: 'Tech Solutions LLC',
-    description: 'Developed and maintained full-stack features for a large-scale e-commerce platform. Worked with React, Node.js, and PostgreSQL.',
-    tags: ['React', 'Node.js', 'E-commerce'],
-  },
-  {
     type: 'education',
     icon: <GraduationCap />,
-    date: '2016 - 2020',
-    title: 'B.Sc. in Computer Science',
-    subtitle: 'University of Technology',
-    description: 'Graduated with honors. Focused on algorithms, data structures, and artificial intelligence. President of the university coding club.',
-    tags: ['Algorithms', 'AI', 'Data Structures'],
+    date: 'Present',
+    title: 'Student at Parul Institute of Engineering and Technology',
+    subtitle: 'B.Tech in AI & ML',
+    description: 'Currently pursuing my bachelor\'s degree, focusing on the fascinating world of Artificial Intelligence and Machine Learning.',
+    tags: ['AI', 'ML', 'Student', 'B.Tech'],
   },
   {
     type: 'work',
-    icon: <Building />,
-    date: 'Summer 2019',
-    title: 'Software Engineering Intern',
-    subtitle: 'StartupHub',
-    description: 'Gained hands-on experience in a fast-paced startup environment, contributing to both frontend and backend tasks for a new mobile application.',
-    tags: ['Internship', 'Mobile Dev', 'Startups'],
+    icon: <Briefcase />,
+    date: 'Ongoing',
+    title: 'Learning in Progress',
+    subtitle: 'Continuous Development',
+    description: 'Actively learning new technologies and sharpening my skills to build innovative solutions.',
+    tags: ['Learning', 'Development', 'Skills'],
   },
 ];
 
@@ -56,14 +38,14 @@ export default function TimelinePage() {
     <div className="container mx-auto px-4 py-16 sm:py-24">
       <div 
         className={cn(
-          "text-center mb-16", 
-          isMounted ? "animate-fade-in-up" : "opacity-0"
+          "text-center mb-16 opacity-0", 
+          isMounted && "animate-fade-in-up"
         )} 
         style={{ animationDelay: '100ms' }}
       >
         <h1 className="font-headline text-4xl md:text-5xl font-bold tracking-tighter mb-2">My Journey</h1>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          A chronological overview of my professional career and educational milestones.
+          A snapshot of my current learning and development path.
         </p>
       </div>
 
@@ -72,10 +54,10 @@ export default function TimelinePage() {
           <div
             key={index}
             className={cn(
-              "relative pl-8 sm:pl-12 py-6 timeline-item",
-              isMounted ? "animate-fade-in-up" : "opacity-0"
+              "relative pl-8 sm:pl-12 py-6 timeline-item opacity-0",
+              isMounted && "animate-fade-in-up"
             )}
-            style={{ animationDelay: isMounted ? `${index * 200 + 300}ms` : '0ms' }}
+            style={{ animationDelay: `${index * 200 + 300}ms` }}
           >
             <div className="absolute left-0 timeline-dot">
               <span className="flex items-center justify-center w-8 h-8 rounded-full bg-background ring-4 ring-primary">
