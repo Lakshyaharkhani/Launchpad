@@ -6,65 +6,33 @@ import { ArrowUpRight } from "lucide-react";
 
 const certifications = [
   {
-    title: "Advanced React Patterns",
-    issuer: "Coursera",
-    date: "2023",
+    title: "HTML & CSS",
+    issuer: "Progate",
+    date: "2024",
     imageUrl: "https://placehold.co/600x400.png",
-    url: "#",
-    aiHint: "modern abstract"
+    url: "https://drive.google.com/file/d/1QaWRPMlV1OIP6SN6I3C3cwtyHmjSWXSC/view?usp=drive_link",
+    aiHint: "code document"
   },
   {
-    title: "Next.js 14 Pro",
-    issuer: "Vercel Academy",
-    date: "2023",
+    title: "JavaScript",
+    issuer: "Progate",
+    date: "2024",
     imageUrl: "https://placehold.co/600x400.png",
-    url: "#",
-    aiHint: "minimalist tech"
-  },
-  {
-    title: "Certified Kubernetes Administrator",
-    issuer: "The Linux Foundation",
-    date: "2022",
-    imageUrl: "https://placehold.co/600x400.png",
-    url: "#",
-    aiHint: "network nodes"
-  },
-  {
-    title: "AWS Certified Solutions Architect",
-    issuer: "Amazon Web Services",
-    date: "2022",
-    imageUrl: "https://placehold.co/600x400.png",
-    url: "#",
-    aiHint: "cloud computing"
-  },
-  {
-    title: "Professional Scrum Master I",
-    issuer: "Scrum.org",
-    date: "2021",
-    imageUrl: "https://placehold.co/600x400.png",
-    url: "#",
-    aiHint: "team collaboration"
-  },
-    {
-    title: "Cybersecurity Fundamentals",
-    issuer: "IBM Skills",
-    date: "2021",
-    imageUrl: "https://placehold.co/600x400.png",
-    url: "#",
-    aiHint: "digital security"
-  },
+    url: "https://drive.google.com/file/d/1QarDT80jkwoxY4fiiJ7Wyz3Pe3q-ohQr/view?usp=drive_link",
+    aiHint: "programming certificate"
+  }
 ];
 
 export default function CertificationsPage() {
   return (
     <div className="container mx-auto px-4 py-16 sm:py-24">
       <div className="text-center mb-12">
-        <h1 className="font-headline text-4xl md:text-5xl font-bold tracking-tighter mb-2">Certifications & Achievements</h1>
+        <h1 className="font-headline text-4xl md:text-5xl font-bold tracking-tighter mb-2">My Certifications</h1>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          My commitment to continuous learning and professional development is reflected in these credentials.
+          A showcase of my foundational web development credentials.
         </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
         {certifications.map((cert, index) => (
           <Link href={cert.url} key={index} target="_blank" rel="noopener noreferrer" className="group block">
             <Card className="h-full flex flex-col overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2">
